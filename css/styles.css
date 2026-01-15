@@ -57,6 +57,8 @@ body::before {
 
 /* Animation container */
 .container {
+  max-width: 800px;
+  width:80vw;
   opacity: 0;
 }
 
