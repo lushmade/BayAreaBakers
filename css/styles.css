@@ -1,15 +1,19 @@
 :root {
   --red: #ed1b34;
-  --brown: #a7540e;
-  --cream: #f7be8c;
+  --dark-charcoal: #1a1a1a;
+  --dark-brown: #7a3d08;
+  --medium-brown: #a7540e;
+  --light-brown: #c9782e;
+  --cream: #fef7ed;
 }
 
 /* Base */
 body {
   margin: 0;
   height: 100vh;
-  background: #ffffff;
-  font-family: "Lato", sans-serif;
+  background: var(--cream);
+  font-family: "Poppins", sans-serif;
+  letter-spacing: -1px;
   overflow: hidden;
 }
 
@@ -52,7 +56,7 @@ body::before {
 /* Intro */
 .intro {
   font-size: 1.7rem;
-  color: var(--brown);
+  color: var(--dark-brown);
 }
 
 /* Animation container */
@@ -85,10 +89,10 @@ body::before {
 
 /* Title */
 .title {
-  font-family: "Lilita One", cursive;
+  font-family: "Staatliches", cursive;
   font-size: 2.8rem;
   color: var(--red);
-  letter-spacing: 0.75px;
+  letter-spacing: 0;
   margin: 0;
   text-shadow: 2px 3px 0 rgba(237, 27, 52, 0.15);
   transform: scale(0.94);
@@ -106,7 +110,7 @@ body::before {
 /* Subtitle */
 .subtitle {
   font-size: 1.35rem;
-  color: var(--brown);
+  color: var(--dark-brown);
   margin-top: 0.5rem;
   opacity: 0;
   transition: opacity 0.8s ease;
@@ -127,7 +131,7 @@ body::before {
 
 /* Links */
 .meta a {
-  color: var(--cream);
+  color: var(--light-brown);
   text-decoration: none;
   position: relative;
 }
@@ -140,8 +144,8 @@ body::before {
   bottom: -2px;
   width: 100%;
   height: 2px;
-  border-bottom: 2px dashed var(--cream);
-/*  background: var(--cream);*/
+  border-bottom: 2px dashed var(--light-brown);
+/*  background: var(--light-brown);*/
   transform: scaleX(0);
   transition: transform 0.25s ease;
 }
@@ -157,7 +161,7 @@ body::before {
   left: 0;
   bottom: -2px;
   width: 100%;
-  border-bottom: 2px dashed var(--cream);
+  border-bottom: 2px dashed var(--light-brown);
   transform: scaleX(0);
   transition: transform 0.25s ease;
 }
@@ -172,6 +176,36 @@ body::before {
 
 .fade-in {
   opacity: 1;
+}
+
+/* Learn More Button */
+.learn-more-container {
+  margin-top: 2rem;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.learn-more-container.fade-in {
+  opacity: 1;
+}
+
+.learn-more-btn {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background: var(--red);
+  color: var(--cream);
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.learn-more-btn:hover {
+  background: var(--dark-brown);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* Idle breathing (SAFE) */

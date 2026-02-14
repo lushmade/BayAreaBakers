@@ -5,6 +5,7 @@ const title = document.querySelector(".title");
 const subtitle = document.getElementById("subtitle");
 const handle = document.getElementById("handle");
 const email = document.getElementById("email");
+const learnMoreContainer = document.getElementById("learn-more-container");
 
 // Fade out intro
 setTimeout(() => {
@@ -41,3 +42,8 @@ setTimeout(() => {
 setTimeout(() => {
   container.classList.add("idle");
 }, 8000);
+
+// Show Learn More button
+setTimeout(() => {
+  learnMoreContainer.classList.add("fade-in");
+}, 9000);
