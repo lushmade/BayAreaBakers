@@ -2,33 +2,131 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>About Us - Bay Area Bakers Quadball Club</title>
+  <title>Schedule, Tournaments & Team Info | Bay Area Bakers Quadball Club</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Bay Area Bakers Quadball schedule, tournaments, and team information. Practices at Cannery Park in Hayward, CA. Competing at H2O5, Snohomish National Qualifiers, and US Quadball Cup 2026." />
+  <meta name="keywords" content="Bay Area Bakers schedule, quadball tournaments 2026, H2O5 tournament, Snohomish National Qualifiers, US Quadball Cup, Cannery Park Hayward, quadball practice Bay Area, join quadball team California" />
+  <meta name="author" content="Bay Area Bakers Quadball Club" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Bay Area Bakers Quadball Club - Schedule & Tournaments" />
+  <meta property="og:description" content="View our tournament schedule and learn about the Bay Area Bakers quadball team. Practices every other week at Cannery Park, Hayward." />
+  <meta property="og:image" content="https://bayareabakers.com/static/BakersLogo.png" />
+  <meta property="og:url" content="https://bayareabakers.com/about.html" />
+  <meta property="og:site_name" content="Bay Area Bakers Quadball Club" />
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Bay Area Bakers Quadball - Schedule & Tournaments" />
+  <meta name="twitter:description" content="View our tournament schedule and learn about the Bay Area Bakers quadball team." />
+  <meta name="twitter:image" content="https://bayareabakers.com/static/BakersLogo.png" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://bayareabakers.com/about.html" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Staatliches&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Poppins:wght@300;400;500;600&family=Staatliches&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/about.css" />
   <link rel="icon" type="image/png" href="static/BakersLogo.png">
-  <link rel="apple-touch-icon" href="/static/BakersLogo.png">
+  <link rel="apple-touch-icon" href="static/BakersLogo.png">
+  <meta name="theme-color" content="#a7540e" />
+
+  <!-- Structured Data (JSON-LD) for Events -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsTeam",
+    "name": "Bay Area Bakers Quadball Club",
+    "sport": "Quadball",
+    "url": "https://bayareabakers.com/about.html",
+    "logo": "https://bayareabakers.com/static/BakersLogo.png",
+    "email": "chefs@bayareabakers.com",
+    "sameAs": [
+      "https://www.instagram.com/bayareabakersqc"
+    ],
+    "event": [
+      {
+        "@type": "SportsEvent",
+        "name": "H2O5 Quadball Tournament",
+        "startDate": "2026-02-21",
+        "location": {
+          "@type": "Place",
+          "name": "Cannery Park",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Hayward",
+            "addressRegion": "CA",
+            "addressCountry": "US"
+          }
+        },
+        "organizer": {
+          "@type": "SportsTeam",
+          "name": "Bay Area Bakers Quadball Club"
+        }
+      },
+      {
+        "@type": "SportsEvent",
+        "name": "Snohomish National Qualifiers",
+        "startDate": "2026-03-07",
+        "endDate": "2026-03-08",
+        "location": {
+          "@type": "Place",
+          "name": "Kasch Park",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Everett",
+            "addressRegion": "WA",
+            "addressCountry": "US"
+          }
+        }
+      },
+      {
+        "@type": "SportsEvent",
+        "name": "US Quadball Cup",
+        "startDate": "2026-04-18",
+        "endDate": "2026-04-19",
+        "location": {
+          "@type": "Place",
+          "name": "Placer Valley Soccer Complex",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Roseville",
+            "addressRegion": "CA",
+            "addressCountry": "US"
+          }
+        }
+      }
+    ]
+  }
+  </script>
+
 </head>
 <body class="about-page">
 
   <nav class="navbar">
     <div class="nav-container">
-      <a href="index.html" class="nav-logo">
+      <a href="about.html" class="nav-logo">
         <img src="static/BakersLogo.png" alt="Bay Area Bakers Logo" class="nav-logo-img">
         Bay Area Bakers
       </a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
       <div class="nav-right">
         <div class="nav-links">
-          <a href="#schedule">Schedule</a>
-          <a href="#fundraisers">Fundraisers</a>
-          <a href="#sponsors">Sponsors</a>
-          <a href="#join">Join</a>
+          <a href="about.html" class="nav-link-active">About</a>
+          <a href="sponsors.html">Sponsors</a>
+          <a href="shop.html">Shop</a>
         </div>
         <a href="https://www.instagram.com/bayareabakersqc" target="_blank" rel="noopener noreferrer" class="instagram-icon" aria-label="Follow us on Instagram">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -43,9 +141,37 @@
 
   <main class="about-main">
 
+    <section id="who-are-we" class="section who-section">
+      <h1 class="who-title">Who are the Bakers?</h1>
+      <div class="who-text">
+        <p class="who-intro">
+          <strong>The Bay Area Bakers are a quadball development team affiliated with the Bay Area Breakers</strong>, the 2025 US Quadball West National Qualifier Champions. Led by two veteran captains with over 10 years of experience each, the Bakers are dedicated to one core belief: <br><strong class="red">Anyone can play Quadball.</strong>
+        </p>
+        <p class="who-intro">
+          When you play with the Bakers, you're committing to good vibes, supportive sidelines, fun times, trying our best, and of course—bread. We're here to develop skills, build community, and bring the joy back to the game, one shift at a time.
+        </p>
+      </div>
+    </section>
+
     <section id="schedule" class="section schedule-section">
       <h2 class="section-title">Our Scheduled Shifts</h2>
-      <div class="schedule-container">
+
+      <!-- Condensed Practices -->
+      <div class="practices-summary">
+        <div class="event-badge">Practice</div>
+        <h3 class="event-name">Practice w/ Breakers</h3>
+        <p class="practices-info">Every other Saturday, 10am – 1pm at Cannery Park, Hayward, CA</p>
+        <div class="practice-dates">
+          <span class="practice-date-chip">Feb 28</span>
+          <span class="practice-date-chip">Mar 14</span>
+          <span class="practice-date-chip">Mar 28</span>
+          <span class="practice-date-chip">Apr 11</span>
+        </div>
+      </div>
+
+      <!-- Tournaments in 2-col grid -->
+      <h3 class="schedule-sub-title">Tournaments</h3>
+      <div class="tournaments-grid">
 
         <!-- H2O5 Tournament -->
         <div class="event-card tournament">
@@ -64,19 +190,6 @@
           <div class="event-details">
             <h4>Game Schedule & Scores</h4>
             <p class="schedule-tbd">Schedule TBA - Scores will be posted after the tournament</p>
-          </div>
-        </div>
-
-        <!-- Practice - February 28 -->
-        <div class="event-card practice">
-          <div class="event-badge">Practice</div>
-          <div class="event-header">
-            <h3 class="event-name">Practice</h3>
-            <div class="event-date-location">
-              <span class="event-date">February 28, 2026</span>
-              <span class="event-time">10am - 1pm</span>
-              <span class="event-location">Cannery Park, Hayward, CA</span>
-            </div>
           </div>
         </div>
 
@@ -100,45 +213,6 @@
           </div>
         </div>
 
-        <!-- Practice - March 14 -->
-        <div class="event-card practice">
-          <div class="event-badge">Practice</div>
-          <div class="event-header">
-            <h3 class="event-name">Practice</h3>
-            <div class="event-date-location">
-              <span class="event-date">March 14, 2026</span>
-              <span class="event-time">10am - 1pm</span>
-              <span class="event-location">Cannery Park, Hayward, CA</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Practice - March 28 -->
-        <div class="event-card practice">
-          <div class="event-badge">Practice</div>
-          <div class="event-header">
-            <h3 class="event-name">Practice</h3>
-            <div class="event-date-location">
-              <span class="event-date">March 28, 2026</span>
-              <span class="event-time">10am - 1pm</span>
-              <span class="event-location">Cannery Park, Hayward, CA</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Practice - April 11 -->
-        <div class="event-card practice">
-          <div class="event-badge">Practice</div>
-          <div class="event-header">
-            <h3 class="event-name">Practice</h3>
-            <div class="event-date-location">
-              <span class="event-date">April 11, 2026</span>
-              <span class="event-time">10am - 1pm</span>
-              <span class="event-location">Cannery Park, Hayward, CA</span>
-            </div>
-          </div>
-        </div>
-
         <!-- US Quadball Cup -->
         <div class="event-card tournament">
           <div class="event-badge">Tournament</div>
@@ -146,7 +220,7 @@
             <h3 class="event-name">US Quadball Cup</h3>
             <div class="event-date-location">
               <span class="event-date">April 18-19, 2026</span>
-              <span class="event-location">Placer Valley Soccer Complex, Roseville, CA</span>
+              <span class="event-location">Placer Valley, CA</span>
             </div>
           </div>
           <div class="event-roster">
@@ -159,49 +233,6 @@
           </div>
         </div>
 
-      </div>
-    </section>
-
-    <section id="fundraisers" class="section fundraisers-section">
-      <h2 class="section-title">Dough for Dough Fundraisers</h2>
-      <div class="fundraisers-container">
-        <div class="fundraiser-card">
-          <h3 class="fundraiser-title">Bay Area Bakers Jerseys</h3>
-          <p class="fundraiser-description">
-            Support the team by purchasing official Bay Area Bakers jerseys!<br>
-            <strong>Jerseys will be on sale soon.</strong>
-          </p>
-          <p class="fundraiser-cta">
-            Stay tuned to our <a href="https://www.instagram.com/bayareabakersqc" target="_blank" rel="noopener noreferrer">Instagram</a> for the jersey drop announcement!
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="sponsors" class="section sponsors-section">
-      <h2 class="section-title">Sponsors</h2>
-      <div class="sponsors-container">
-        <div class="sponsor-card">
-          <h3 class="sponsor-title">Support the Bakers</h3>
-          <p class="sponsor-description">
-            The Bakers are looking for season sponsors starting at $250!<br>
-            Email us at <a href="mailto:chefs@bayareabakers.com">chefs@bayareabakers.com</a> to learn more!
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="who-are-we" class="section who-section">
-      <h2 class="section-title">Who Are the Bay Area Bakers</h2>
-      <div class="who-container">
-        <div class="who-card">
-          <p class="who-description">
-            The Bay Area Bakers are a quadball development team affiliated with the Bay Area Breakers, 2025 US Quadball West National Qualifier Champions. Led by two veteran captains with over 10 years of experience each, the Bakers are dedicated to one core belief: <strong>anyone can play quadball</strong>.
-          </p>
-          <p class="who-description">
-            When you play with the Bakers, you're committing to good vibes, supportive sidelines, fun times, trying our best, and of course—bread. We're here to develop skills, build community, and bring the joy back to the game, one shift at a time.
-          </p>
-        </div>
       </div>
     </section>
 
@@ -220,14 +251,36 @@
 
   </main>
 
-  <footer class="footer">
-    <div class="footer-content">
-      <p>&copy; 2026 Bay Area Bakers Quadball Club</p>
-      <p>
-        <a href="https://www.instagram.com/bayareabakersqc" target="_blank" rel="noopener noreferrer">@bayareabakersqc</a>  •  <a href="mailto:chefs@bayareabakers.com">chefs@bayareabakers.com</a>
-      </p>
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand"><span>Bay Area Bakers</span><p>The only bread-themed sports team in America. B-team of the Bay Area Breakers.</p></div>
+      <div>
+        <div class="footer-col-title">TEAM</div>
+        <ul class="footer-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="about.html#schedule">Schedule</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">CONNECT</div>
+        <ul class="footer-links">
+          <li><a href="https://www.instagram.com/bayareabakersqc" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+          <li><a href="mailto:chefs@bayareabakers.com">Email</a></li>
+          <li><a href="sponsors.html">Sponsor Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">SHOP</div>
+        <ul class="footer-links">
+          <li><a href="shop.html">Merch</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Bay Area Bakers. All rights reserved.</p>
     </div>
   </footer>
 
+  <script src="js/nav.js"></script>
 </body>
 </html>

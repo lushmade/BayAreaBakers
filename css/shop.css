@@ -1,0 +1,752 @@
+/* ============================================================
+   SHOP PAGE — Bay Area Bakers
+   Page-specific styles only. Shared navbar/footer/section in styles.css
+   ============================================================ */
+
+/* ---- Page Layout ---- */
+.shop-main {
+  min-height: calc(100vh - 64px);
+  background: var(--white);
+  margin-top: 64px;
+}
+
+.shop-main .section {
+  padding: 3rem 2rem;
+}
+
+.shop-main .section:nth-child(even) {
+  background: rgba(254, 247, 237, 0.3);
+}
+
+.shop-section .section-title,
+.order-section .section-title {
+  font-size: 1.6rem;
+  letter-spacing: 3px;
+  margin: 0 0 0.5rem 0;
+}
+
+.shop-intro {
+  text-align: center;
+  color: var(--gray-700);
+  font-size: 1rem;
+  font-weight: 300;
+  margin: 2.5rem auto 0;
+  max-width: 600px;
+  line-height: 1.7;
+}
+
+/* ---- Product Image Carousel ---- */
+.product-carousel {
+  position: relative;
+  width: 100%;
+  height: 160px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.carousel-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 400ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel-slide.active {
+  opacity: 1;
+}
+
+.carousel-slide .product-img-placeholder {
+  height: 100%;
+  margin: 0;
+  border-radius: 8px;
+}
+
+.carousel-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--brown);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+  z-index: 2;
+  opacity: 0;
+}
+
+.product-carousel:hover .carousel-btn {
+  opacity: 1;
+}
+
+.carousel-btn:hover {
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.carousel-prev { left: 8px; }
+.carousel-next { right: 8px; }
+
+.carousel-dots {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 2;
+}
+
+.carousel-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(167, 84, 14, 0.2);
+}
+
+.carousel-dot.active {
+  background: var(--brown);
+  border-color: var(--brown);
+}
+
+/* ---- Products Grid ---- */
+.products-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-card-full {
+  grid-column: 1 / -1;
+}
+
+/* ---- Jersey Two-Column Layout ---- */
+.jersey-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.jersey-carousel-col .product-carousel {
+  height: 360px;
+}
+
+.jersey-details-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.jersey-details-col .product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ---- Product Card ---- */
+.product-card {
+  background: white;
+  border-radius: 8px;
+  border: 2px solid rgba(167, 84, 14, 0.12);
+  box-shadow: none;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.product-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--brown);
+}
+
+.product-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(167, 84, 14, 0.1);
+}
+
+.product-card.hidden {
+  display: none;
+}
+
+.product-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.product-img-placeholder {
+  width: 100%;
+  height: 160px;
+  background: var(--cream);
+  border-radius: 8px;
+  border: 1px dashed rgba(167, 84, 14, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-img-label {
+  font-family: "Staatliches", cursive;
+  font-size: 1.3rem;
+  color: var(--gray-500);
+  letter-spacing: 2px;
+}
+
+.product-name {
+  font-family: "Staatliches", cursive;
+  font-size: 2rem;
+  color: var(--brown);
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.product-price {
+  font-family: "Staatliches", cursive;
+  font-size: 1.4rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: var(--brown-dark);
+  margin: 0.25rem 0;
+}
+
+.product-desc {
+  font-size: 0.88rem;
+  font-weight: 300;
+  color: var(--gray-500);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ---- Form Elements ---- */
+.product-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex: 1;
+}
+
+.form-group-sm {
+  flex: 0 0 80px;
+}
+
+.form-row {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.form-label {
+  font-family: "Staatliches", cursive;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  color: var(--brown);
+}
+
+.form-input {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 300;
+  padding: 0.6rem 0.85rem;
+  border: 1px solid var(--gray-300);
+  border-radius: 8px;
+  color: var(--gray-700);
+  background: white;
+  transition: border-color 200ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-input::placeholder {
+  color: var(--gray-300);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--brown);
+  box-shadow: 0 0 0 3px rgba(167, 84, 14, 0.1);
+}
+
+.form-input-sm {
+  width: 80px;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.form-hint {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: var(--gray-500);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.required { color: var(--red); }
+.optional { color: var(--gray-500); font-weight: 300; font-size: 0.8rem; }
+
+/* ---- Size Buttons ---- */
+.size-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.size-btn {
+  font-family: "Staatliches", cursive;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  padding: 0.4rem 0.85rem;
+  border: 1px solid var(--gray-300);
+  border-radius: 8px;
+  background: white;
+  color: var(--gray-700);
+  cursor: pointer;
+  transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.size-btn:hover {
+  border-color: var(--brown);
+  color: var(--brown);
+  background: var(--cream);
+}
+
+.size-btn.selected {
+  background: var(--brown);
+  border-color: var(--brown);
+  color: white;
+}
+
+/* ---- Radio Group ---- */
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--gray-700);
+  cursor: pointer;
+}
+
+.radio-label input[type="radio"] {
+  accent-color: var(--brown);
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+/* ---- Size Chart ---- */
+.size-chart-toggle {
+  font-family: "Staatliches", cursive;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  color: var(--brown);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+  transition: color 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.size-chart-toggle:hover { color: var(--brown-dark); }
+
+.size-chart {
+  background: var(--cream);
+  border-radius: 8px;
+  padding: 1rem;
+  border: 1px solid rgba(167, 84, 14, 0.12);
+}
+
+.size-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.size-table th {
+  font-family: "Staatliches", cursive;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  color: var(--brown);
+  text-align: left;
+  padding: 0.4rem 0.5rem;
+  border-bottom: 1px solid rgba(167, 84, 14, 0.2);
+}
+
+.size-table td {
+  padding: 0.35rem 0.5rem;
+  font-weight: 300;
+  color: var(--gray-700);
+  border-bottom: 1px solid rgba(167, 84, 14, 0.08);
+}
+
+.size-chart-note {
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: var(--gray-500);
+  margin: 0.5rem 0 0;
+  font-style: italic;
+}
+
+/* ---- Add Button ---- */
+.add-btn {
+  font-family: "Staatliches", cursive;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  padding: 0.65rem 1.5rem;
+  background: var(--brown);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background 200ms cubic-bezier(0.4, 0, 0.2, 1), transform 200ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  align-self: flex-start;
+  box-shadow: var(--shadow-sm);
+}
+
+.add-btn:hover {
+  background: var(--brown-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+/* ---- Added Items List ---- */
+.added-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.added-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--cream);
+  border: 1px solid rgba(167, 84, 14, 0.12);
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.88rem;
+  font-weight: 300;
+  color: var(--gray-700);
+}
+
+.added-item-label { flex: 1; }
+
+.remove-btn {
+  background: none;
+  border: none;
+  color: var(--gray-500);
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0 0.25rem;
+  line-height: 1;
+  transition: color 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.remove-btn:hover { color: var(--red); }
+
+/* ---- Error Messages ---- */
+.field-error {
+  font-size: 0.85rem;
+  color: var(--red);
+  font-weight: 500;
+}
+
+.form-error {
+  margin-bottom: 0.5rem;
+}
+
+/* ---- Order Section Layout ---- */
+.order-layout {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 2.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+/* ---- Order Summary Box ---- */
+.order-summary-box {
+  background: var(--cream);
+  border-radius: 8px;
+  border: 1px solid rgba(167, 84, 14, 0.12);
+  border-left: 4px solid var(--brown);
+  box-shadow: none;
+  padding: 1.75rem;
+  position: sticky;
+  top: 80px;
+}
+
+.summary-title {
+  font-family: "Staatliches", cursive;
+  font-size: 1.4rem;
+  color: var(--brown);
+  letter-spacing: 2px;
+  margin: 0 0 1.25rem 0;
+}
+
+.summary-empty {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--gray-500);
+  line-height: 1.6;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.summary-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--gray-700);
+  padding: 0.4rem 0;
+  border-bottom: 1px solid rgba(167, 84, 14, 0.1);
+}
+
+.summary-item-name { flex: 1; }
+.summary-item-price { font-weight: 500; }
+
+.summary-totals {
+  border-top: 1px solid rgba(167, 84, 14, 0.2);
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--gray-700);
+}
+
+.summary-total-row {
+  font-family: "Staatliches", cursive;
+  font-size: 1.4rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: var(--brown-dark);
+  border-top: 1px solid rgba(167, 84, 14, 0.2);
+  padding-top: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+/* ---- Order Form ---- */
+.order-form {
+  background: white;
+  border-radius: 8px;
+  border: 1px solid rgba(167, 84, 14, 0.12);
+  box-shadow: none;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.address-fields[hidden] {
+  display: none;
+}
+
+.address-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: var(--cream);
+  border-radius: 8px;
+  border: 1px solid rgba(167, 84, 14, 0.12);
+}
+
+/* ---- Delivery Tags ---- */
+.delivery-tag {
+  display: inline-block;
+  font-family: "Staatliches", cursive;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  font-weight: 400;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-left: 0.35rem;
+}
+
+.free-tag {
+  background: #d4edda;
+  color: #155724;
+}
+
+.ship-tag {
+  background: var(--cream);
+  color: var(--brown);
+  border: 1px solid rgba(167, 84, 14, 0.2);
+}
+
+/* ---- Submit Button ---- */
+.submit-btn {
+  font-family: "Staatliches", cursive;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  padding: 0.85rem 2.5rem;
+  background: var(--red);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 200ms cubic-bezier(0.4, 0, 0.2, 1), transform 200ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+  align-self: flex-start;
+}
+
+.submit-btn:hover {
+  background: var(--brown-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ---- Confirmation ---- */
+.order-confirmation {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.confirmation-card {
+  background: white;
+  border-radius: 8px;
+  border: 1px solid rgba(167, 84, 14, 0.12);
+  box-shadow: none;
+  padding: 3rem 2.5rem;
+}
+
+.confirmation-icon { font-size: 3rem; margin-bottom: 1rem; }
+
+.confirmation-title {
+  font-family: "Staatliches", cursive;
+  font-size: 2.5rem;
+  color: var(--brown);
+  letter-spacing: 2px;
+  margin: 0 0 1rem 0;
+}
+
+.confirmation-msg {
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--gray-700);
+  line-height: 1.8;
+  margin: 0 0 0.75rem 0;
+}
+
+.confirmation-sub {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--gray-500);
+  margin: 0;
+}
+
+.confirmation-sub a {
+  color: var(--red);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.confirmation-sub a:hover {
+  color: var(--brown);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .jersey-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .order-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .order-summary-box {
+    position: static;
+  }
+
+  .carousel-btn {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .section { padding: 3rem 1rem; }
+}

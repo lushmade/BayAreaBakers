@@ -1,0 +1,201 @@
+/* ============================================================
+   INDEX PAGE — Bay Area Bakers
+   Landing page animation & layout
+   ============================================================ */
+
+/* Full-screen stage */
+.stage {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Centre helper */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Visibility states */
+.hidden {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.visible {
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+/* Intro line */
+.intro {
+  font-size: 1.7rem;
+  color: var(--brown);
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+/* Animation container */
+.container {
+  opacity: 0;
+  transition: opacity 1s ease, transform 0.8s ease;
+}
+
+.visible .container {
+  opacity: 1;
+}
+
+/* Title */
+.title {
+  font-family: "Staatliches", cursive;
+  font-size: 3rem;
+  color: var(--red);
+  margin: 0;
+  letter-spacing: 0px;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.title.pop-in {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Subtitle */
+.subtitle {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.35rem;
+  font-weight: 300;
+  color: var(--brown-dark);
+  margin-top: 0.5rem;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+/* Meta links */
+.meta {
+  font-size: 0.95rem;
+  color: var(--brown-light);
+  margin-top: 1.15rem;
+  font-weight: 300;
+}
+
+.meta a {
+  color: var(--gray-light);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.meta a:hover {
+  color: var(--brown);
+}
+
+#handle a::after,
+#email a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 1px;
+  background: var(--brown);
+  transition: width 0.3s ease;
+}
+
+#handle a:hover::after,
+#email a:hover::after {
+  width: 100%;
+}
+
+#handle,
+#email {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+/* Fade / pop helpers */
+.fade-in {
+  opacity: 1 !important;
+}
+
+.pop-in {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+}
+
+/* Learn-more button */
+.learn-more-container {
+  margin-top: 2rem;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.learn-more-btn {
+  font-family: "Staatliches", cursive;
+  font-size: 1rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--cream);
+  background: var(--brown);
+  padding: 0.75rem 2rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: background var(--dur) var(--ease), transform var(--dur) var(--ease);
+  box-shadow: var(--shadow-sm);
+}
+
+.learn-more-btn:hover {
+  background: var(--brown-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Idle breathing */
+@keyframes breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.01); }
+}
+
+.container.idle {
+  animation: breathe 4s ease-in-out infinite;
+}
+
+/* Shift stages (vertical slide-up) */
+.shift-1 { transform: translate(-50%, calc(-50% - 10px)); }
+.shift-2 { transform: translate(-50%, calc(-50% - 20px)); }
+.shift-3 { transform: translate(-50%, calc(-50% - 30px)); }
+
+/* ============================================================
+   INDEX RESPONSIVE
+   ============================================================ */
+@media (max-width: 600px) {
+  .title {
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+  }
+
+  .intro {
+    font-size: 1.2rem;
+  }
+
+  .meta {
+    font-size: 0.85rem;
+  }
+
+  .learn-more-btn {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.5rem;
+  }
+}

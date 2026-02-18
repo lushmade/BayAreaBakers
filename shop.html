@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Shop | Bay Area Bakers Quadball Club</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Shop Bay Area Bakers merchandise — jerseys, headbands, and sweatpants. Order online and pick up at US Quadball Cup or ship via USPS." />
+  <meta name="keywords" content="Bay Area Bakers merch, quadball jersey, quadball headband, quadball sweatpants, Bay Area Bakers shop" />
+  <meta name="author" content="Bay Area Bakers Quadball Club" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Shop | Bay Area Bakers Quadball Club" />
+  <meta property="og:description" content="Shop Bay Area Bakers merchandise — jerseys, headbands, and sweatpants." />
+  <meta property="og:image" content="https://bayareabakers.com/static/BakersLogo.png" />
+  <meta property="og:url" content="https://bayareabakers.com/shop.html" />
+  <meta property="og:site_name" content="Bay Area Bakers Quadball Club" />
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Shop | Bay Area Bakers Quadball Club" />
+  <meta name="twitter:description" content="Shop Bay Area Bakers merchandise — jerseys, headbands, and sweatpants." />
+  <meta name="twitter:image" content="https://bayareabakers.com/static/BakersLogo.png" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://bayareabakers.com/shop.html" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Poppins:wght@300;400;500;600&family=Staatliches&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/shop.css" />
+  <link rel="icon" type="image/png" href="static/BakersLogo.png">
+  <link rel="apple-touch-icon" href="static/BakersLogo.png">
+  <meta name="theme-color" content="#a7540e" />
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Bay Area Bakers Merchandise",
+    "url": "https://bayareabakers.com/shop.html",
+    "numberOfItems": 3,
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "Product",
+          "name": "Bay Area Bakers Jersey",
+          "description": "Custom name and number on your official Bakers jersey.",
+          "image": "https://bayareabakers.com/static/jersey-render.png",
+          "offers": {
+            "@type": "Offer",
+            "price": "45",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "Product",
+          "name": "Bay Area Bakers Headband",
+          "description": "Double-sided headband, 39 x 2.5 inches. Choose your position color.",
+          "offers": {
+            "@type": "Offer",
+            "price": "10",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "Product",
+          "name": "Bay Area Bakers Sweatpants",
+          "description": "Comfortable joggers in your size.",
+          "offers": {
+            "@type": "Offer",
+            "price": "40",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          }
+        }
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body class="about-page">
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="about.html" class="nav-logo">
+        <img src="static/BakersLogo.png" alt="Bay Area Bakers Logo" class="nav-logo-img">
+        Bay Area Bakers
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="about.html">About</a>
+          <a href="sponsors.html">Sponsors</a>
+          <a href="shop.html" class="nav-link-active">Shop</a>
+        </div>
+        <a href="https://www.instagram.com/bayareabakersqc" target="_blank" rel="noopener noreferrer" class="instagram-icon" aria-label="Follow us on Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="shop-main">
+
+    <!-- Products Section -->
+    <section class="section shop-section">
+
+      <div class="products-grid">
+
+        <!-- Jersey Card -->
+        <div class="product-card product-card-full" id="jersey-card">
+          <div class="jersey-layout">
+            <div class="jersey-carousel-col">
+              <div class="product-carousel" data-product="jersey">
+                <div class="carousel-track">
+                  <div class="carousel-slide active">
+                    <img src="static/jersey-render.png" alt="Bay Area Bakers jersey — front and back view" class="carousel-img" />
+                  </div>
+                  <div class="carousel-slide">
+                    <img src="static/jersey-front.png" alt="Bay Area Bakers jersey — front view" class="carousel-img" />
+                  </div>
+                  <div class="carousel-slide">
+                    <img src="static/jersey-back.png" alt="Bay Area Bakers jersey — back view" class="carousel-img" />
+                  </div>
+                </div>
+                <button type="button" class="carousel-btn carousel-prev" onclick="carouselNav(this, -1)" aria-label="Previous image">‹</button>
+                <button type="button" class="carousel-btn carousel-next" onclick="carouselNav(this, 1)" aria-label="Next image">›</button>
+                <div class="carousel-dots">
+                  <span class="carousel-dot active" onclick="carouselGoTo(this, 0)"></span>
+                  <span class="carousel-dot" onclick="carouselGoTo(this, 1)"></span>
+                  <span class="carousel-dot" onclick="carouselGoTo(this, 2)"></span>
+                </div>
+              </div>
+            </div>
+            <div class="jersey-details-col">
+              <div class="product-info">
+                <h3 class="product-name">Bakers Jersey</h3>
+                <p class="product-price">$45</p>
+                <p class="product-desc">Aren't they so stinking cute?</p>
+              </div>
+              <div class="product-form">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label" for="jersey-name">Custom Name</label>
+                    <input type="text" id="jersey-name" class="form-input" placeholder="e.g. SMITH" maxlength="20" />
+                  </div>
+                  <div class="form-group form-group-sm">
+                    <label class="form-label" for="jersey-number">Number</label>
+                    <input type="text" id="jersey-number" class="form-input" placeholder="00" maxlength="2" inputmode="numeric" pattern="\d{1,2}" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Size</label>
+                  <div class="size-buttons">
+                    <button type="button" class="size-btn" data-size="XS">XS</button>
+                    <button type="button" class="size-btn" data-size="S">S</button>
+                    <button type="button" class="size-btn" data-size="M">M</button>
+                    <button type="button" class="size-btn" data-size="L">L</button>
+                    <button type="button" class="size-btn" data-size="XL">XL</button>
+                    <button type="button" class="size-btn" data-size="XXL">XXL</button>
+                  </div>
+                </div>
+
+                <button type="button" class="size-chart-toggle" onclick="toggleSizeChart('jersey-chart')">Size Chart ▾</button>
+                <div id="jersey-chart" class="size-chart" hidden>
+                  <table class="size-table">
+                    <thead>
+                      <tr><th>Size</th><th>Chest</th><th>Length</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>XS</td><td>20.9" (53cm)</td><td>27.2" (69cm)</td></tr>
+                      <tr><td>S</td><td>20.9" (53cm)</td><td>28.7" (73cm)</td></tr>
+                      <tr><td>M</td><td>22" (56cm)</td><td>29.9" (76cm)</td></tr>
+                      <tr><td>L</td><td>23.2" (59cm)</td><td>31.1" (79cm)</td></tr>
+                      <tr><td>XL</td><td>24.5" (62cm)</td><td>32.3" (82cm)</td></tr>
+                      <tr><td>XXL</td><td>25.5" (65cm)</td><td>33.5" (85cm)</td></tr>
+                    </tbody>
+                  </table>
+                  <p class="size-chart-note">Measurements were converted from cm.</p>
+                </div>
+
+                <div id="jersey-error" class="field-error" hidden></div>
+                <button type="button" class="add-btn" onclick="addJersey()">+ Add Jersey</button>
+
+                <div id="jersey-list" class="added-items-list"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Headband Card -->
+        <div class="product-card product-card-half hidden" id="headband-card">
+          <div class="product-header">
+            <div class="product-carousel" data-product="headband">
+              <div class="carousel-track">
+                <div class="carousel-slide active">
+                  <div class="product-img-placeholder"><span class="product-img-label">Headband — Front</span></div>
+                </div>
+                <div class="carousel-slide">
+                  <div class="product-img-placeholder"><span class="product-img-label">Headband — Side</span></div>
+                </div>
+                <div class="carousel-slide">
+                  <div class="product-img-placeholder"><span class="product-img-label">Headband — Detail</span></div>
+                </div>
+              </div>
+              <button type="button" class="carousel-btn carousel-prev" onclick="carouselNav(this, -1)" aria-label="Previous image">‹</button>
+              <button type="button" class="carousel-btn carousel-next" onclick="carouselNav(this, 1)" aria-label="Next image">›</button>
+              <div class="carousel-dots">
+                <span class="carousel-dot active" onclick="carouselGoTo(this, 0)"></span>
+                <span class="carousel-dot" onclick="carouselGoTo(this, 1)"></span>
+                <span class="carousel-dot" onclick="carouselGoTo(this, 2)"></span>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Double-sided Headband</h3>
+              <p class="product-price">$10</p>
+              <p class="product-desc">Let's be real - we're all controlled by a rat. (39"×2.5")</p>
+            </div>
+          </div>
+
+          <div class="product-form">
+            <div class="form-group">
+              <label class="form-label">Type</label>
+              <div class="radio-group">
+                <label class="radio-label">
+                  <input type="radio" name="headband-type" value="Chaser/Keeper" />
+                  Chaser / Keeper
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="headband-type" value="Beater/Seeker" />
+                  Beater / Seeker
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="headband-qty">Quantity</label>
+              <input type="number" id="headband-qty" class="form-input form-input-sm" value="1" min="1" max="10" onchange="updateSummary()" />
+            </div>
+            <div id="headband-error" class="field-error" hidden></div>
+            <button type="button" class="add-btn" onclick="addHeadband()">+ Add Headband</button>
+            <div id="headband-list" class="added-items-list"></div>
+          </div>
+        </div>
+
+        <!-- Sweatpants Card -->
+        <div class="product-card product-card-half hidden" id="sweatpants-card">
+          <div class="product-header">
+            <div class="product-carousel" data-product="sweatpants">
+              <div class="carousel-track">
+                <div class="carousel-slide active">
+                  <div class="product-img-placeholder"><span class="product-img-label">Sweatpants — Front</span></div>
+                </div>
+                <div class="carousel-slide">
+                  <div class="product-img-placeholder"><span class="product-img-label">Sweatpants — Back</span></div>
+                </div>
+                <div class="carousel-slide">
+                  <div class="product-img-placeholder"><span class="product-img-label">Sweatpants — Detail</span></div>
+                </div>
+              </div>
+              <button type="button" class="carousel-btn carousel-prev" onclick="carouselNav(this, -1)" aria-label="Previous image">‹</button>
+              <button type="button" class="carousel-btn carousel-next" onclick="carouselNav(this, 1)" aria-label="Next image">›</button>
+              <div class="carousel-dots">
+                <span class="carousel-dot active" onclick="carouselGoTo(this, 0)"></span>
+                <span class="carousel-dot" onclick="carouselGoTo(this, 1)"></span>
+                <span class="carousel-dot" onclick="carouselGoTo(this, 2)"></span>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">"Cake" Sweatpants</h3>
+              <p class="product-price">$40</p>
+              <p class="product-desc">Let the people know you've got a cake.</p>
+            </div>
+          </div>
+
+          <div class="product-form">
+            <div class="form-group">
+              <label class="form-label">Size</label>
+              <div class="size-buttons" id="sweats-size-buttons">
+                <button type="button" class="size-btn" data-size="XS">XS</button>
+                <button type="button" class="size-btn" data-size="S">S</button>
+                <button type="button" class="size-btn" data-size="M">M</button>
+                <button type="button" class="size-btn" data-size="L">L</button>
+                <button type="button" class="size-btn" data-size="XL">XL</button>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="sweats-qty">Quantity</label>
+              <input type="number" id="sweats-qty" class="form-input form-input-sm" value="1" min="1" max="10" />
+            </div>
+
+            <button type="button" class="size-chart-toggle" onclick="toggleSizeChart('sweats-chart')">Size Chart ▾</button>
+            <div id="sweats-chart" class="size-chart" hidden>
+              <table class="size-table">
+                <thead>
+                  <tr><th>Size</th><th>Waist</th><th>Hip</th><th>Inseam</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>XS</td><td>20-22"</td><td>33–35"</td><td>28"</td></tr>
+                  <tr><td>S</td><td>20-22"</td><td>36–38"</td><td>29"</td></tr>
+                  <tr><td>M</td><td>30–32"</td><td>39–41"</td><td>30"</td></tr>
+                  <tr><td>L</td><td>33–35"</td><td>42–44"</td><td>30"</td></tr>
+                  <tr><td>XL</td><td>36–38"</td><td>45–47"</td><td>31"</td></tr>
+                </tbody>
+              </table>
+              <p class="size-chart-note">Measurements are approximate. Update before launch.</p>
+            </div>
+
+            <div id="sweats-error" class="field-error" hidden></div>
+            <button type="button" class="add-btn" onclick="addSweatpants()">+ Add Sweatpants</button>
+            <div id="sweats-list" class="added-items-list"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="shop-intro">Payment collected via Zelle or Venmo after your order is confirmed.<br>Pickup available at US Quadball Cup (free) or ship via USPS.</p>
+    </section>
+
+    <!-- Order Summary + Form -->
+    <section class="section order-section">
+      <h2 class="section-title">Submit Your Order</h2>
+
+      <!-- Summary -->
+      <div class="order-layout">
+        <div class="order-summary-box">
+          <h3 class="summary-title">Order Summary</h3>
+          <div id="summary-empty" class="summary-empty">No items added yet. Select items above to get started.</div>
+          <ul id="summary-list" class="summary-list" hidden></ul>
+
+          <div id="summary-totals" class="summary-totals" hidden>
+            <div class="summary-row">
+              <span>Subtotal</span>
+              <span id="summary-subtotal">$0</span>
+            </div>
+            <div class="summary-row">
+              <span>Shipping</span>
+              <span id="summary-shipping">—</span>
+            </div>
+            <div class="summary-row summary-total-row">
+              <span>Total</span>
+              <span id="summary-total">$0</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <form id="order-form" class="order-form" onsubmit="submitOrder(event)" novalidate>
+          <h3 class="summary-title">Your Info</h3>
+
+          <div class="form-group">
+            <label class="form-label" for="buyer-name">Full Name <span class="required">*</span></label>
+            <input type="text" id="buyer-name" class="form-input" placeholder="Jane Smith" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="buyer-email">Email <span class="required">*</span></label>
+            <input type="email" id="buyer-email" class="form-input" placeholder="jane@example.com" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="buyer-payment">Zelle / Venmo <span class="required">*</span></label>
+            <input type="text" id="buyer-payment" class="form-input" placeholder="@username or phone number" required />
+            <p class="form-hint">We'll send a payment request to this handle after confirming your order.</p>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Delivery <span class="required">*</span></label>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input type="radio" name="delivery" value="pickup" onchange="updateDelivery()" required />
+                Pickup at US Quadball Cup <span class="delivery-tag free-tag">Free</span>
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="delivery" value="ship" onchange="updateDelivery()" />
+                Ship via USPS <span class="delivery-tag ship-tag" id="ship-cost-label">—</span>
+              </label>
+            </div>
+          </div>
+
+          <div id="address-fields" class="address-fields" hidden>
+            <div class="form-group">
+              <label class="form-label" for="addr-street">Street Address <span class="required">*</span></label>
+              <input type="text" id="addr-street" class="form-input" placeholder="123 Main St" />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="addr-city">City <span class="required">*</span></label>
+                <input type="text" id="addr-city" class="form-input" placeholder="San Francisco" />
+              </div>
+              <div class="form-group form-group-sm">
+                <label class="form-label" for="addr-state">State <span class="required">*</span></label>
+                <input type="text" id="addr-state" class="form-input" placeholder="CA" maxlength="2" />
+              </div>
+              <div class="form-group form-group-sm">
+                <label class="form-label" for="addr-zip">ZIP <span class="required">*</span></label>
+                <input type="text" id="addr-zip" class="form-input" placeholder="94102" maxlength="10" />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="order-notes">Order Notes <span class="optional">(optional)</span></label>
+            <textarea id="order-notes" class="form-input form-textarea" placeholder="Any special requests or questions?"></textarea>
+          </div>
+
+          <div id="form-error" class="field-error form-error" hidden></div>
+          <button type="submit" class="submit-btn">Submit Order</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Confirmation Message (hidden until submit) -->
+    <div id="order-confirmation" class="order-confirmation" hidden>
+      <div class="confirmation-card">
+        <div class="confirmation-icon">🎉</div>
+        <h2 class="confirmation-title">Order Received!</h2>
+        <p class="confirmation-msg">Thanks, <strong id="confirm-name"></strong>! We've received your order and will reach out to <strong id="confirm-email"></strong> soon to confirm and collect payment via Zelle/Venmo.</p>
+        <p class="confirmation-sub">In the meantime, follow us on <a href="https://www.instagram.com/bayareabakersqc" target="_blank" rel="noopener noreferrer">@bayareabakersqc</a> for updates.</p>
+        <a href="shop.html" class="submit-btn" style="display:inline-block;margin-top:1.5rem;text-decoration:none;">Place Another Order</a>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand"><span>Bay Area Bakers</span><p>The only bread-themed sports team in America. B-team of the Bay Area Breakers.</p></div>
+      <div>
+        <div class="footer-col-title">TEAM</div>
+        <ul class="footer-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="about.html#schedule">Schedule</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">CONNECT</div>
+        <ul class="footer-links">
+          <li><a href="https://www.instagram.com/bayareabakersqc" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+          <li><a href="mailto:chefs@bayareabakers.com">Email</a></li>
+          <li><a href="sponsors.html">Sponsor Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">SHOP</div>
+        <ul class="footer-links">
+          <li><a href="shop.html">Merch</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Bay Area Bakers. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/nav.js"></script>
+  <script src="js/shop.js"></script>
+</body>
+</html>
