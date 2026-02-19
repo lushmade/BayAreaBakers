@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__Desktop_Commander__start_process",
+      "mcp__Desktop_Commander__interact_with_process",
+      "mcp__Desktop_Commander__force_terminate",
+      "mcp__Desktop_Commander__list_directory",
+      "WebFetch(domain:www.easypost.com)",
+      "mcp__Desktop_Commander__start_search",
+      "mcp__Desktop_Commander__get_more_search_results",
+      "Bash(python3:*)",
+      "WebFetch(domain:forms.gle)",
+      "WebFetch(domain:docs.google.com)",
+      "Bash(lsof:*)",
+      "Bash(curl:*)"
+    ]
+  }
+}

@@ -184,12 +184,41 @@
             </div>
           </div>
           <div class="event-roster">
-            <h4>Tournament Roster</h4>
-            <p class="roster-tbd">Roster coming soon</p>
+            <button type="button" class="roster-toggle" onclick="this.classList.toggle('open'); this.nextElementSibling.hidden = !this.nextElementSibling.hidden;">
+              <h4>Tournament Roster <span class="roster-chevron">▸</span></h4>
+            </button>
+            <div class="roster-content" hidden>
+              <p class="roster-staff"><strong>Coach:</strong> Duran Allison</p>
+              <p class="roster-staff"><strong>Staff:</strong> Brittany Masangkay, Sam Selle</p>
+              <ul class="roster-list">
+                <li>Briana Azevedo</li>
+                <li>Chloe Foo</li>
+                <li>Darien Yu</li>
+                <li>David Cadena</li>
+                <li>Donovan Farmer</li>
+                <li>Duran Allison</li>
+                <li>Emmanuel Otoah-Gyasi</li>
+                <li>Fredy Cornejo</li>
+                <li>Jacob Ellis</li>
+                <li>Jaime Aleman</li>
+                <li>Jenny Yu</li>
+                <li>Liz Martinez</li>
+                <li>Matthew Ignao</li>
+                <li>Nick Arceci</li>
+                <li>Sean Nam</li>
+                <li>Shirley Lu</li>
+                <li>Xing Chan</li>
+              </ul>
+            </div>
           </div>
           <div class="event-details">
-            <h4>Game Schedule & Scores</h4>
-            <p class="schedule-tbd">Schedule TBA - Scores will be posted after the tournament</p>
+            <h4>Game Schedule</h4>
+            <ul class="game-schedule">
+              <li><span class="game-time">10:30 AM</span> Bakers vs Breakers</li>
+              <li><span class="game-time">11:30 AM</span> Bakers vs Second Stars</li>
+              <li><span class="game-time">3:00 PM</span> Bakers vs Vipers</li>
+              <li><span class="game-time">4:00 PM</span> Finals</li>
+            </ul>
           </div>
         </div>
 

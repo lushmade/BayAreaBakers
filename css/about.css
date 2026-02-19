@@ -228,6 +228,77 @@
   margin: 0;
 }
 
+.game-schedule {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.game-schedule li {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--gray-700);
+}
+
+.game-time {
+  font-family: "Staatliches", cursive;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  color: var(--brown);
+  display: inline-block;
+  min-width: 80px;
+}
+
+.roster-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+}
+
+.roster-toggle h4 {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.roster-chevron {
+  font-size: 0.8em;
+  transition: transform 200ms;
+  display: inline-block;
+}
+
+.roster-toggle.open .roster-chevron {
+  transform: rotate(90deg);
+}
+
+.roster-content {
+  padding-top: 0.5rem;
+}
+
+.roster-staff {
+  color: var(--gray-700);
+  font-size: 0.85rem;
+  margin: 0.15rem 0;
+}
+
+.roster-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.2rem 1.5rem;
+}
+
+.roster-list li {
+  color: var(--charcoal);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
 .event-details {
   margin-top: 1rem;
   padding-top: 1rem;

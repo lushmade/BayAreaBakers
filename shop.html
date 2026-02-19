@@ -361,6 +361,10 @@
               <span>Subtotal</span>
               <span id="summary-subtotal">$0</span>
             </div>
+            <div class="summary-row discount-summary-row" id="summary-discount-row" hidden>
+              <span>Discount</span>
+              <span id="summary-discount">—</span>
+            </div>
             <div class="summary-row">
               <span>Shipping</span>
               <span id="summary-shipping">—</span>
@@ -369,6 +373,15 @@
               <span>Total</span>
               <span id="summary-total">$0</span>
             </div>
+          </div>
+
+          <div class="discount-row">
+            <div class="discount-input-group">
+              <input type="text" id="discount-code" class="form-input" placeholder="Discount code" />
+              <button type="button" class="discount-apply-btn" id="discount-apply-btn" onclick="applyDiscount()">Apply</button>
+              <button type="button" class="discount-remove-btn" id="discount-remove-btn" onclick="removeDiscount()" hidden>Remove</button>
+            </div>
+            <div id="discount-msg" class="discount-msg" hidden></div>
           </div>
         </div>
 

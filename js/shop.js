@@ -26,6 +26,13 @@ function carouselGoTo(dot, index) {
 const PRICES = { jersey: 45, headband: 10, sweatpants: 40 };
 const SHIP_RATES = { jersey: 13, headband: 13, sweatpants: 24 };
 
+// Discount codes: code → discounted jersey price
+const DISCOUNT_CODES = {
+  'BAKERSBRIGADE2026': 25,
+  'BREAKINGBREAD2026': 30
+};
+let activeDiscount = null;   // null or { code, jerseyPrice }
+
 // Cart: array of { type, label, price, shippingRate }
 const cart = [];
 
@@ -43,6 +50,102 @@ document.querySelectorAll('.size-buttons').forEach(group => {
 function toggleSizeChart(id) {
   const chart = document.getElementById(id);
   chart.hidden = !chart.hidden;
+}
+
+// ── Discount code ────────────────────────────────────────────
+function applyDiscount() {
+  var input = document.getElementById('discount-code');
+  var msgEl = document.getElementById('discount-msg');
+  var code  = input.value.trim().toUpperCase();
+
+  msgEl.hidden = true;
+  msgEl.className = 'discount-msg';
+
+  if (!code) {
+    msgEl.textContent = 'Please enter a discount code.';
+    msgEl.classList.add('error');
+    msgEl.hidden = false;
+    return;
+  }
+
+  if (DISCOUNT_CODES[code] !== undefined) {
+    activeDiscount = { code: code, jerseyPrice: DISCOUNT_CODES[code] };
+    var saving = PRICES.jersey - activeDiscount.jerseyPrice;
+    var disclaimer = code === 'BAKERSBRIGADE2026'
+      ? ' This code is only valid for Bay Area Bakers players.'
+      : ' This code is only valid for Bay Area Breakers or Bay Area Bakers players.';
+    msgEl.textContent = 'Code applied! Jerseys are now $' + activeDiscount.jerseyPrice + ' ($' + saving + ' off).' + disclaimer;
+    msgEl.classList.add('success');
+    msgEl.hidden = false;
+    input.disabled = true;
+    document.getElementById('discount-apply-btn').hidden = true;
+    document.getElementById('discount-remove-btn').hidden = false;
+
+    // Retroactively update all existing jerseys in the cart
+    cart.forEach(function (item, idx) {
+      if (item && item.type === 'jersey') {
+        item.price = activeDiscount.jerseyPrice;
+        // Update the rendered row
+        var row = document.querySelector('.added-item[data-cart-index="' + idx + '"] .added-item-label');
+        if (row) { row.textContent = item.label + ' — $' + item.price; }
+      }
+    });
+
+    // Update displayed jersey price
+    var priceEl = document.querySelector('#jersey-card .product-price');
+    if (priceEl) {
+      priceEl.innerHTML = '';
+      var newPrice = document.createElement('span');
+      newPrice.textContent = '$' + activeDiscount.jerseyPrice;
+      var oldPrice = document.createElement('span');
+      oldPrice.className = 'price-original';
+      oldPrice.textContent = '$' + PRICES.jersey;
+      priceEl.appendChild(newPrice);
+      priceEl.appendChild(document.createTextNode(' '));
+      priceEl.appendChild(oldPrice);
+    }
+
+    updateSummary();
+  } else {
+    activeDiscount = null;
+    msgEl.textContent = 'Invalid discount code.';
+    msgEl.classList.add('error');
+    msgEl.hidden = false;
+  }
+}
+
+// ── Remove discount code ────────────────────────────────────────
+function removeDiscount() {
+  activeDiscount = null;
+
+  // Reset input
+  var input = document.getElementById('discount-code');
+  input.disabled = false;
+  input.value = '';
+
+  // Swap buttons back and hide message
+  document.getElementById('discount-remove-btn').hidden = true;
+  document.getElementById('discount-apply-btn').hidden = false;
+  var msgEl = document.getElementById('discount-msg');
+  msgEl.hidden = true;
+  msgEl.className = 'discount-msg';
+
+  // Revert all jerseys in cart to full price
+  cart.forEach(function (item, idx) {
+    if (item && item.type === 'jersey') {
+      item.price = PRICES.jersey;
+      var row = document.querySelector('.added-item[data-cart-index="' + idx + '"] .added-item-label');
+      if (row) { row.textContent = item.label + ' — $' + item.price; }
+    }
+  });
+
+  // Restore displayed jersey price
+  var priceEl = document.querySelector('#jersey-card .product-price');
+  if (priceEl) {
+    priceEl.textContent = '$' + PRICES.jersey;
+  }
+
+  updateSummary();
 }
 
 // ── Add Jersey ────────────────────────────────────────────────
@@ -70,10 +173,11 @@ function addJersey() {
     return;
   }
 
+  const jerseyPrice = activeDiscount ? activeDiscount.jerseyPrice : PRICES.jersey;
   const label = `Jersey — #${number} ${name} (${size})`;
-  cart.push({ type: 'jersey', label, price: PRICES.jersey, shippingRate: SHIP_RATES.jersey });
+  cart.push({ type: 'jersey', label, price: jerseyPrice, shippingRate: SHIP_RATES.jersey });
 
-  renderAddedItem('jersey-list', cart.length - 1, label, PRICES.jersey);
+  renderAddedItem('jersey-list', cart.length - 1, label, jerseyPrice);
 
   // Reset fields
   nameEl.value = '';
@@ -217,6 +321,22 @@ function updateSummary() {
   const subtotal = activeItems.reduce((sum, item) => sum + item.price, 0);
   document.getElementById('summary-subtotal').textContent = `$${subtotal}`;
 
+  // Discount row
+  const discountRow = document.getElementById('summary-discount-row');
+  if (activeDiscount) {
+    const jerseyCount = activeItems.filter(i => i.type === 'jersey').length;
+    if (jerseyCount > 0) {
+      const perJerseySaving = PRICES.jersey - activeDiscount.jerseyPrice;
+      const totalSaving = perJerseySaving * jerseyCount;
+      document.getElementById('summary-discount').textContent = '-$' + totalSaving;
+      discountRow.hidden = false;
+    } else {
+      discountRow.hidden = true;
+    }
+  } else {
+    discountRow.hidden = true;
+  }
+
   // Shipping
   const delivery = document.querySelector('input[name="delivery"]:checked');
   let shipping = 0;
@@ -330,9 +450,12 @@ function submitOrder(e) {
   const itemsSummary = itemLines.join('\n');
   const totalText    = '$' + total + (shipping > 0 ? ' (incl. $' + shipping + ' shipping)' : ' (pickup)');
   const deliveryText = delivery.value === 'pickup' ? 'Pickup at US Quadball Cup' : 'Ship via USPS';
-  const notes        = document.getElementById('order-notes').value.trim();
+  var notes = document.getElementById('order-notes').value.trim();
+  if (activeDiscount) {
+    notes = (notes ? notes + '\n' : '') + 'Discount code: ' + activeDiscount.code;
+  }
 
-  // Submit to Google Form
+  // Submit order data
   submitOrder_data({
     name:     name,
     email:    email,
