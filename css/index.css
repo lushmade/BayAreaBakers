@@ -39,6 +39,7 @@
   color: var(--brown);
   opacity: 1;
   transition: opacity 1s ease;
+  margin-top: -100px;
 }
 
 /* Animation container */
