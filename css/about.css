@@ -168,12 +168,10 @@
 
 .event-header {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: flex-start;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid rgba(167, 84, 14, 0.15);
-  flex-wrap: wrap;
-  gap: 1rem;
 }
 
 .event-name {
@@ -182,28 +180,30 @@
   color: var(--brown);
   letter-spacing: 2px;
   margin: 0;
-  flex: 1;
-  min-width: 200px;
 }
 
 .event-date-location {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.25rem;
-  text-align: right;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 0.5rem;
 }
 
 .event-date {
-  font-weight: 500;
-  color: var(--brown-dark);
-  font-size: 1.1rem;
+  color: var(--gray-500);
+  font-size: 0.95rem;
+  font-weight: 300;
 }
 
 .event-time {
   color: var(--brown-dark);
   font-size: 0.95rem;
   font-weight: 500;
+}
+
+.event-separator {
+  color: var(--gray-500);
+  font-size: 0.95rem;
 }
 
 .event-location {
@@ -238,6 +238,8 @@
   font-size: 0.9rem;
   font-weight: 300;
   color: var(--gray-700);
+  display: flex;
+  align-items: baseline;
 }
 
 .game-time {
@@ -245,8 +247,17 @@
   font-size: 0.85rem;
   letter-spacing: 1px;
   color: var(--brown);
-  display: inline-block;
   min-width: 80px;
+  flex-shrink: 0;
+}
+
+.game-score {
+  margin-left: auto;
+  font-family: "Staatliches", cursive;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  color: var(--brown);
+  white-space: nowrap;
 }
 
 .roster-toggle {
@@ -545,19 +556,8 @@
     left: 0.75rem;
   }
 
-  .event-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.75rem;
-  }
-
   .event-name {
     font-size: 1.5rem;
-  }
-
-  .event-date-location {
-    align-items: flex-start;
-    text-align: left;
   }
 
   .event-date {
