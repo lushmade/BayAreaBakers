@@ -23,13 +23,12 @@ function carouselGoTo(dot, index) {
   dots[index].classList.add('active');
 }
 
-const PRICES = { jersey: 45, headband: 10, sweatpants: 40 };
+const PRICES = { jersey: 45, headband: 10, sweatpants: 36 };
 const SHIP_RATES = { jersey: 13, headband: 13, sweatpants: 24 };
 
 // Discount codes: code → discounted jersey price
 const DISCOUNT_CODES = {
-  'BAKERSBRIGADE2026': 25,
-  'BREAKINGBREAD2026': 30
+  'BAKERSBRIGADE2026': 25
 };
 let activeDiscount = null;   // null or { code, jerseyPrice }
 
@@ -71,10 +70,7 @@ function applyDiscount() {
   if (DISCOUNT_CODES[code] !== undefined) {
     activeDiscount = { code: code, jerseyPrice: DISCOUNT_CODES[code] };
     var saving = PRICES.jersey - activeDiscount.jerseyPrice;
-    var disclaimer = code === 'BAKERSBRIGADE2026'
-      ? ' This code is only valid for Bay Area Bakers players.'
-      : ' This code is only valid for Bay Area Breakers or Bay Area Bakers players.';
-    msgEl.textContent = 'Code applied! Jerseys are now $' + activeDiscount.jerseyPrice + ' ($' + saving + ' off).' + disclaimer;
+    msgEl.textContent = 'Code applied! Jerseys are now $' + activeDiscount.jerseyPrice + ' ($' + saving + ' off). This code is only valid for Bay Area Bakers players.';
     msgEl.classList.add('success');
     msgEl.hidden = false;
     input.disabled = true;
@@ -288,6 +284,17 @@ function updateSummary() {
   const summaryList   = document.getElementById('summary-list');
   const summaryTotals = document.getElementById('summary-totals');
 
+  // Show/hide Snohomish delivery option based on whether sweatpants are in cart
+  const hasSweatpants = activeItems.some(i => i.type === 'sweatpants');
+  const snohomishOption = document.getElementById('snohomish-delivery-option');
+  const snohomishRadio = snohomishOption.querySelector('input[type="radio"]');
+  snohomishOption.hidden = !hasSweatpants;
+  // If sweatpants removed and Snohomish was selected, clear the selection
+  if (!hasSweatpants && snohomishRadio.checked) {
+    snohomishRadio.checked = false;
+    updateDelivery();
+  }
+
   if (activeItems.length === 0) {
     summaryEmpty.hidden  = false;
     summaryList.hidden   = true;
@@ -342,7 +349,7 @@ function updateSummary() {
   let shipping = 0;
   let shippingText = '—';
 
-  if (delivery && delivery.value === 'pickup') {
+  if (delivery && (delivery.value === 'pickup' || delivery.value === 'breakers' || delivery.value === 'snohomish')) {
     shippingText = 'Free';
   } else if (delivery && delivery.value === 'ship') {
     const maxRate = Math.max(...activeItems.map(i => i.shippingRate));
@@ -449,7 +456,10 @@ function submitOrder(e) {
 
   const itemsSummary = itemLines.join('\n');
   const totalText    = '$' + total + (shipping > 0 ? ' (incl. $' + shipping + ' shipping)' : ' (pickup)');
-  const deliveryText = delivery.value === 'pickup' ? 'Pickup at US Quadball Cup' : 'Ship via USPS';
+  const deliveryText = delivery.value === 'pickup' ? 'Pickup at US Quadball Cup'
+    : delivery.value === 'breakers' ? 'Pickup at Bay Area Breakers Practice'
+    : delivery.value === 'snohomish' ? 'Pickup at Snohomish National Qualifiers'
+    : 'Ship via USPS';
   var notes = document.getElementById('order-notes').value.trim();
   if (activeDiscount) {
     notes = (notes ? notes + '\n' : '') + 'Discount code: ' + activeDiscount.code;

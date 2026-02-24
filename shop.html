@@ -88,7 +88,7 @@
           "description": "Comfortable joggers in your size.",
           "offers": {
             "@type": "Offer",
-            "price": "40",
+            "price": "36",
             "priceCurrency": "USD",
             "availability": "https://schema.org/InStock"
           }
@@ -272,32 +272,13 @@
         </div>
 
         <!-- Sweatpants Card -->
-        <div class="product-card product-card-half hidden" id="sweatpants-card">
+        <div class="product-card product-card-half" id="sweatpants-card">
           <div class="product-header">
-            <div class="product-carousel" data-product="sweatpants">
-              <div class="carousel-track">
-                <div class="carousel-slide active">
-                  <div class="product-img-placeholder"><span class="product-img-label">Sweatpants — Front</span></div>
-                </div>
-                <div class="carousel-slide">
-                  <div class="product-img-placeholder"><span class="product-img-label">Sweatpants — Back</span></div>
-                </div>
-                <div class="carousel-slide">
-                  <div class="product-img-placeholder"><span class="product-img-label">Sweatpants — Detail</span></div>
-                </div>
-              </div>
-              <button type="button" class="carousel-btn carousel-prev" onclick="carouselNav(this, -1)" aria-label="Previous image">‹</button>
-              <button type="button" class="carousel-btn carousel-next" onclick="carouselNav(this, 1)" aria-label="Next image">›</button>
-              <div class="carousel-dots">
-                <span class="carousel-dot active" onclick="carouselGoTo(this, 0)"></span>
-                <span class="carousel-dot" onclick="carouselGoTo(this, 1)"></span>
-                <span class="carousel-dot" onclick="carouselGoTo(this, 2)"></span>
-              </div>
-            </div>
+            <img src="static/CakeSweatpants.png" alt="Bay Area Bakers Cake Sweatpants" class="product-img" />
             <div class="product-info">
               <h3 class="product-name">"Cake" Sweatpants</h3>
-              <p class="product-price">$40</p>
-              <p class="product-desc">Let the people know you've got a cake. Sweatpants ordered before March 2 can be delivered to Snohomish National Qualifiers - add an order note for Snohomish delivery!</p>
+              <p class="product-price">$36</p>
+              <p class="product-desc">Let the people know you've got a cake.</p>
             </div>
           </div>
 
@@ -410,6 +391,15 @@
               <label class="radio-label">
                 <input type="radio" name="delivery" value="pickup" onchange="updateDelivery()" required />
                 Pickup at US Quadball Cup <span class="delivery-tag free-tag">Free</span>
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="delivery" value="breakers" onchange="updateDelivery()" />
+                Pickup at Bay Area Breakers Practice <span class="delivery-tag free-tag">Free</span>
+              </label>
+              <label class="radio-label" id="snohomish-delivery-option" hidden>
+                <input type="radio" name="delivery" value="snohomish" onchange="updateDelivery()" />
+                Pickup at Snohomish National Qualifiers <span class="delivery-tag free-tag">Free</span>
+                <span class="form-hint">Sweatpants only. Orders must be placed by March 1.</span>
               </label>
               <label class="radio-label">
                 <input type="radio" name="delivery" value="ship" onchange="updateDelivery()" />
