@@ -165,7 +165,7 @@
               <div class="product-info">
                 <h3 class="product-name">Bakers Jersey</h3>
                 <p class="product-price">$45</p>
-                <p class="product-desc">Aren't they so stinking cute?<br>Orders close March 1 for delivery at US Quadball Cup.</p>
+                <p class="product-desc">Aren't they so stinking cute?<br>Orders close March 1 for pickup at US Quadball Cup.</p>
               </div>
               <div class="product-form">
                 <div class="form-row">
@@ -310,7 +310,7 @@
             <div class="product-info">
               <h3 class="product-name">"Cake" Sweatpants</h3>
               <p class="product-price">$36</p>
-              <p class="product-desc">Let the people know you've got a cake.</p>
+              <p class="product-desc">Let the people know you've got a cake.<br>Orders close March 1 for pickup at Snohomish National Qualifiers.</p>
             </div>
           </div>
 
@@ -354,7 +354,7 @@
 
       </div>
 
-      <p class="shop-intro">Payment collected via Zelle or Venmo after your order is confirmed.<br>Pickup available at US Quadball Cup (free) or ship via USPS.</p>
+      <p class="shop-intro">Payment collected via Zelle or Venmo after your order is confirmed.<br>Free pickup available at Bay Area Breakers practice, Snohomish National Qualifiers (sweatpants only), and US Quadball Cup or ship via USPS.</p>
     </section>
 
     <!-- Order Summary + Form -->
@@ -421,17 +421,16 @@
             <label class="form-label">Delivery <span class="required">*</span></label>
             <div class="radio-group">
               <label class="radio-label">
-                <input type="radio" name="delivery" value="pickup" onchange="updateDelivery()" required />
-                Pickup at US Quadball Cup <span class="delivery-tag free-tag">Free</span>
-              </label>
-              <label class="radio-label">
                 <input type="radio" name="delivery" value="breakers" onchange="updateDelivery()" />
                 Pickup at Bay Area Breakers Practice <span class="delivery-tag free-tag">Free</span>
               </label>
               <label class="radio-label" id="snohomish-delivery-option" hidden>
                 <input type="radio" name="delivery" value="snohomish" onchange="updateDelivery()" />
-                Pickup at Snohomish National Qualifiers <span class="delivery-tag free-tag">Free</span>
-                <span class="form-hint">Sweatpants only. Orders must be placed by March 1.</span>
+                <span>Pickup at Snohomish National Qualifiers <span class="delivery-tag free-tag">Free</span><br><span class="form-hint">Sweatpants only. Orders must be placed by March 1.</span></span>
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="delivery" value="pickup" onchange="updateDelivery()" required />
+                <span>Pickup at US Quadball Cup <span class="delivery-tag free-tag">Free</span><br><span class="form-hint">Orders must be placed by March 1.</span></span>
               </label>
               <label class="radio-label">
                 <input type="radio" name="delivery" value="ship" onchange="updateDelivery()" />
