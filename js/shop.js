@@ -70,7 +70,7 @@ function applyDiscount() {
   if (DISCOUNT_CODES[code] !== undefined) {
     activeDiscount = { code: code, jerseyPrice: DISCOUNT_CODES[code] };
     var saving = PRICES.jersey - activeDiscount.jerseyPrice;
-    msgEl.textContent = 'Code applied! Jerseys are now $' + activeDiscount.jerseyPrice + ' ($' + saving + ' off). This code is only valid for Bay Area Bakers players.';
+    msgEl.textContent = 'Code applied! Jerseys are now $' + activeDiscount.jerseyPrice + ' ($' + saving + ' off). This code is only valid for Bay Area Breakers/Bakers program.';
     msgEl.classList.add('success');
     msgEl.hidden = false;
     input.disabled = true;
