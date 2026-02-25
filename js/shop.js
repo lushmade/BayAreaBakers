@@ -349,7 +349,7 @@ function updateSummary() {
   let shipping = 0;
   let shippingText = '—';
 
-  if (delivery && (delivery.value === 'pickup' || delivery.value === 'breakers' || delivery.value === 'snohomish')) {
+  if (delivery && (delivery.value === 'usqcup' || delivery.value === 'breakers' || delivery.value === 'snohomish')) {
     shippingText = 'Free';
   } else if (delivery && delivery.value === 'ship') {
     const maxRate = Math.max(...activeItems.map(i => i.shippingRate));
@@ -456,7 +456,7 @@ function submitOrder(e) {
 
   const itemsSummary = itemLines.join('\n');
   const totalText    = '$' + total + (shipping > 0 ? ' (incl. $' + shipping + ' shipping)' : ' (pickup)');
-  const deliveryText = delivery.value === 'pickup' ? 'Pickup at US Quadball Cup'
+  const deliveryText = delivery.value === 'usqcup' ? 'Pickup at US Quadball Cup'
     : delivery.value === 'breakers' ? 'Pickup at Bay Area Breakers Practice'
     : delivery.value === 'snohomish' ? 'Pickup at Snohomish National Qualifiers'
     : 'Ship via USPS';
