@@ -6,15 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Shop Bay Area Bakers merchandise — jerseys, headbands, and sweatpants. Order online and pick up at US Quadball Cup or ship via USPS." />
-  <meta name="keywords" content="Bay Area Bakers merch, quadball jersey, quadball headband, quadball sweatpants, Bay Area Bakers shop" />
+  <meta name="description" content="Shop Bay Area Bakers merchandise — headbands and sweatpants. Order online and pick up at US Quadball Cup or ship via USPS." />
+  <meta name="keywords" content="Bay Area Bakers merch, quadball headband, quadball sweatpants, Bay Area Bakers shop" />
   <meta name="author" content="Bay Area Bakers Quadball Club" />
   <meta name="robots" content="index, follow" />
 
   <!-- Open Graph Meta Tags -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Shop | Bay Area Bakers Quadball Club" />
-  <meta property="og:description" content="Shop Bay Area Bakers merchandise — jerseys, headbands, and sweatpants." />
+  <meta property="og:description" content="Shop Bay Area Bakers merchandise — headbands and sweatpants." />
   <meta property="og:image" content="https://bayareabakers.com/static/BakersLogo.png" />
   <meta property="og:url" content="https://bayareabakers.com/shop.html" />
   <meta property="og:site_name" content="Bay Area Bakers Quadball Club" />
@@ -22,7 +22,7 @@
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Shop | Bay Area Bakers Quadball Club" />
-  <meta name="twitter:description" content="Shop Bay Area Bakers merchandise — jerseys, headbands, and sweatpants." />
+  <meta name="twitter:description" content="Shop Bay Area Bakers merchandise — headbands and sweatpants." />
   <meta name="twitter:image" content="https://bayareabakers.com/static/BakersLogo.png" />
 
   <!-- Canonical URL -->
@@ -46,27 +46,11 @@
     "@type": "ItemList",
     "name": "Bay Area Bakers Merchandise",
     "url": "https://bayareabakers.com/shop.html",
-    "numberOfItems": 3,
+    "numberOfItems": 2,
     "itemListElement": [
       {
         "@type": "ListItem",
         "position": 1,
-        "item": {
-          "@type": "Product",
-          "name": "Bay Area Bakers Jersey",
-          "description": "Custom name and number on your official Bakers jersey.",
-          "image": "https://bayareabakers.com/static/jersey-render.png",
-          "offers": {
-            "@type": "Offer",
-            "price": "45",
-            "priceCurrency": "USD",
-            "availability": "https://schema.org/InStock"
-          }
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
         "item": {
           "@type": "Product",
           "name": "Bay Area Bakers Headband",
@@ -81,7 +65,7 @@
       },
       {
         "@type": "ListItem",
-        "position": 3,
+        "position": 2,
         "item": {
           "@type": "Product",
           "name": "Bay Area Bakers Sweatpants",
@@ -135,128 +119,6 @@
     <section class="section shop-section">
 
       <div class="products-grid">
-
-        <!-- Jersey Card -->
-        <div class="product-card product-card-full" id="jersey-card">
-          <div class="jersey-layout">
-            <div class="jersey-carousel-col">
-              <div class="product-carousel" data-product="jersey">
-                <div class="carousel-track">
-                  <div class="carousel-slide active">
-                    <img src="static/jersey-render.png" alt="Bay Area Bakers jersey — front and back view" class="carousel-img" />
-                  </div>
-                  <div class="carousel-slide">
-                    <img src="static/jersey-front.png" alt="Bay Area Bakers jersey — front view" class="carousel-img" />
-                  </div>
-                  <div class="carousel-slide">
-                    <img src="static/jersey-back.png" alt="Bay Area Bakers jersey — back view" class="carousel-img" />
-                  </div>
-                  <div class="carousel-slide">
-                    <img src="static/jersey-example.png" alt="Bay Area Bakers jersey — custom example" class="carousel-img" />
-                  </div>
-                </div>
-                <button type="button" class="carousel-btn carousel-prev" onclick="carouselNav(this, -1)" aria-label="Previous image">‹</button>
-                <button type="button" class="carousel-btn carousel-next" onclick="carouselNav(this, 1)" aria-label="Next image">›</button>
-                <div class="carousel-dots">
-                  <span class="carousel-dot active" onclick="carouselGoTo(this, 0)"></span>
-                  <span class="carousel-dot" onclick="carouselGoTo(this, 1)"></span>
-                  <span class="carousel-dot" onclick="carouselGoTo(this, 2)"></span>
-                  <span class="carousel-dot" onclick="carouselGoTo(this, 3)"></span>
-                </div>
-              </div>
-            </div>
-            <div class="jersey-details-col">
-              <div class="product-info">
-                <h3 class="product-name">Bakers Jersey</h3>
-                <p class="product-price">$45</p>
-                <p class="product-desc">Aren't they so stinking cute?<br>Order by March 1 for pickup at US Quadball Cup.</p>
-              </div>
-              <div class="product-form">
-                <div class="form-row">
-                  <div class="form-group">
-                    <label class="form-label" for="jersey-name">Custom Name</label>
-                    <input type="text" id="jersey-name" class="form-input" placeholder="e.g. SMITH" maxlength="20" />
-                  </div>
-                  <div class="form-group form-group-sm">
-                    <label class="form-label" for="jersey-number">Number</label>
-                    <input type="text" id="jersey-number" class="form-input" placeholder="00" maxlength="2" inputmode="numeric" pattern="\d{1,2}" />
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="form-label">Size</label>
-                  <div class="size-buttons">
-                    <button type="button" class="size-btn" data-size="XS">XS</button>
-                    <button type="button" class="size-btn" data-size="S">S</button>
-                    <button type="button" class="size-btn" data-size="M">M</button>
-                    <button type="button" class="size-btn" data-size="L">L</button>
-                    <button type="button" class="size-btn" data-size="XL">XL</button>
-                    <button type="button" class="size-btn" data-size="XXL">XXL</button>
-                  </div>
-                </div>
-
-                <button type="button" class="size-chart-toggle" onclick="toggleSizeChart('jersey-chart')">Size Chart ▾</button>
-                <div id="jersey-chart" class="size-chart" hidden>
-                  <table class="size-table">
-                    <thead>
-                      <tr><th>Size</th><th>Chest</th><th>Length</th></tr>
-                    </thead>
-                    <tbody>
-                      <tr><td>XS</td><td>20.9" (53cm)</td><td>27.2" (69cm)</td></tr>
-                      <tr><td>S</td><td>20.9" (53cm)</td><td>28.7" (73cm)</td></tr>
-                      <tr><td>M</td><td>22" (56cm)</td><td>29.9" (76cm)</td></tr>
-                      <tr><td>L</td><td>23.2" (59cm)</td><td>31.1" (79cm)</td></tr>
-                      <tr><td>XL</td><td>24.5" (62cm)</td><td>32.3" (82cm)</td></tr>
-                      <tr><td>XXL</td><td>25.5" (65cm)</td><td>33.5" (85cm)</td></tr>
-                    </tbody>
-                  </table>
-                  <p class="size-chart-note">Measurements were converted from cm.</p>
-                </div>
-
-                <button type="button" class="size-chart-toggle" onclick="toggleSizeChart('jersey-roster')">Replica Information ▾</button>
-                <div id="jersey-roster" class="size-chart" hidden>
-                  <table class="size-table">
-                    <thead>
-                      <tr><th>#</th><th>Jersey Name</th><th>Player</th></tr>
-                    </thead>
-                    <tbody>
-                      <tr><td>0</td><td>Nakagawa</td><td>Becky Nakagawa</td></tr>
-                      <tr><td>2</td><td>Yu</td><td>Darien Yu</td></tr>
-                      <tr><td>3</td><td>Croissant</td><td>Kimberly Megan Morente Cheng</td></tr>
-                      <tr><td>4</td><td>Allison</td><td>Duran Allison</td></tr>
-                      <tr><td>5</td><td>Lam</td><td>Sebastian Lam</td></tr>
-                      <tr><td>5</td><td>Fredy</td><td>Fredy Ramirez</td></tr>
-                      <tr><td>8</td><td>Elsa</td><td>Elsa Lem</td></tr>
-                      <tr><td>9</td><td>Foo'd</td><td>Chloe Foo</td></tr>
-                      <tr><td>10</td><td>Otoah-Gyasi</td><td>Emmanuel Otoah-Gyasi</td></tr>
-                      <tr><td>11</td><td>Chan</td><td>Xing Chan</td></tr>
-                      <tr><td>12</td><td>Farmer</td><td>Donovan Farmer</td></tr>
-                      <tr><td>13</td><td>Baker's Dozen</td><td>Briana Azevedo</td></tr>
-                      <tr><td>15</td><td>Brittany</td><td>Brittany Masangkay</td></tr>
-                      <tr><td>17</td><td>CAP</td><td>Se-Hyun Sean Nam</td></tr>
-                      <tr><td>20</td><td>Aldair</td><td>Luis Aldair Grados Acosta</td></tr>
-                      <tr><td>24</td><td>Aleman</td><td>Jaime Aleman</td></tr>
-                      <tr><td>25</td><td>Arceci</td><td>Nick Arceci</td></tr>
-                      <tr><td>26</td><td>Cadena</td><td>David Cadena</td></tr>
-                      <tr><td>27</td><td>Shirley</td><td>Shirley Lu</td></tr>
-                      <tr><td>29</td><td>Saul</td><td>Hunter Saul</td></tr>
-                      <tr><td>43</td><td>Ellis</td><td>Jacob Ellis</td></tr>
-                      <tr><td>44</td><td>MartiBread</td><td>Liz Martinez</td></tr>
-                      <tr><td>64</td><td>Maan Tau</td><td>Jenny Yu</td></tr>
-                      <tr><td>86</td><td>Lintik</td><td>Hamilcar Lintik</td></tr>
-                      <tr><td>99</td><td>Ignao</td><td>Matthew Ignao</td></tr>
-                    </tbody>
-                  </table>
-                  <p class="size-chart-note">Don't see someone? We're still finalizing some jersey numbers.</p>
-                </div>
-
-                <div id="jersey-error" class="field-error" hidden></div>
-                <button type="button" class="add-btn" onclick="addJersey()">+ Add Jersey</button>
-
-                <div id="jersey-list" class="added-items-list"></div>
-              </div>
-            </div>
-          </div>
-        </div>
 
         <!-- Headband Card -->
         <div class="product-card product-card-half hidden" id="headband-card">
@@ -319,7 +181,7 @@
             <div class="product-info">
               <h3 class="product-name">"Cake" Sweatpants</h3>
               <p class="product-price">$36</p>
-              <p class="product-desc">Let the people know you've got a cake.<br>Order by March 1 for pickup at Snohomish National Qualifiers.<br>Order by April 5 for pickup at US Quadball Cup.</p>
+              <p class="product-desc">Let the people know you've got a cake.<br>Order by April 5 for pickup at US Quadball Cup.</p>
             </div>
           </div>
 
@@ -363,7 +225,7 @@
 
       </div>
 
-      <p class="shop-intro">Payment collected via Zelle or Venmo after your order is confirmed.<br>Free pickup available at Bay Area Breakers practice, Snohomish National Qualifiers (sweatpants only), and US Quadball Cup or ship via USPS.</p>
+      <p class="shop-intro">Payment collected via Zelle or Venmo after your order is confirmed.<br>Free pickup available at Bay Area Breakers practice and US Quadball Cup, or ship via USPS.</p>
     </section>
 
     <!-- Order Summary + Form -->
@@ -382,10 +244,6 @@
               <span>Subtotal</span>
               <span id="summary-subtotal">$0</span>
             </div>
-            <div class="summary-row discount-summary-row" id="summary-discount-row" hidden>
-              <span>Discount</span>
-              <span id="summary-discount">—</span>
-            </div>
             <div class="summary-row">
               <span>Shipping</span>
               <span id="summary-shipping">—</span>
@@ -396,14 +254,6 @@
             </div>
           </div>
 
-          <div class="discount-row">
-            <div class="discount-input-group">
-              <input type="text" id="discount-code" class="form-input" placeholder="Discount code" />
-              <button type="button" class="discount-apply-btn" id="discount-apply-btn" onclick="applyDiscount()">Apply</button>
-              <button type="button" class="discount-remove-btn" id="discount-remove-btn" onclick="removeDiscount()" hidden>Remove</button>
-            </div>
-            <div id="discount-msg" class="discount-msg" hidden></div>
-          </div>
         </div>
 
         <!-- Form -->
@@ -433,13 +283,9 @@
                 <input type="radio" name="delivery" value="breakers" onchange="updateDelivery()" />
                 Pickup at Bay Area Breakers Practice <span class="delivery-tag free-tag">Free</span>
               </label>
-              <label class="radio-label" id="snohomish-delivery-option" hidden>
-                <input type="radio" name="delivery" value="snohomish" onchange="updateDelivery()" />
-                <span>Pickup at Snohomish National Qualifiers <span class="delivery-tag free-tag">Free</span><br><span class="form-hint">Sweatpants only. Orders must be placed by March 1.</span></span>
-              </label>
               <label class="radio-label">
                 <input type="radio" name="delivery" value="usqcup" onchange="updateDelivery()" required />
-                <span>Pickup at US Quadball Cup <span class="delivery-tag free-tag">Free</span><br><span class="form-hint">Orders must be placed by March 1.</span></span>
+                <span>Pickup at US Quadball Cup <span class="delivery-tag free-tag">Free</span><br><span class="form-hint">Orders must be placed by April 5.</span></span>
               </label>
               <label class="radio-label">
                 <input type="radio" name="delivery" value="ship" onchange="updateDelivery()" />
