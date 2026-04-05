@@ -228,6 +228,15 @@
   margin: 0;
 }
 
+.game-day-label {
+  font-family: "Staatliches", cursive;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  color: var(--brown);
+  text-transform: uppercase;
+  margin: 0.6rem 0 0.2rem;
+}
+
 .game-schedule {
   list-style: none;
   padding: 0;
@@ -249,6 +258,13 @@
   color: var(--brown);
   min-width: 80px;
   flex-shrink: 0;
+}
+
+.game-location {
+  margin-left: auto;
+  font-size: 0.8rem;
+  color: var(--gray-500);
+  white-space: nowrap;
 }
 
 .game-score {

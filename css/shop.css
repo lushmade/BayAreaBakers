@@ -3,6 +3,23 @@
    Page-specific styles only. Shared navbar/footer/section in styles.css
    ============================================================ */
 
+/* ---- Shop Closed ---- */
+.shop-closed {
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.shop-closed-title {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--red);
+}
+
+.shop-closed-msg {
+  color: var(--gray-700);
+  font-size: 1rem;
+}
+
 /* ---- Page Layout ---- */
 .shop-main {
   min-height: calc(100vh - 64px);
